@@ -10,14 +10,35 @@ def main():
     survivor_males = 0
     survivor_females = 0
 
-    total_passengers = df['PassengerId'].count()
-    class1_passengers = df[df['Pclass'] == 1].count()
-    class2_passengers = df[df['Pclass'] == 2].count()
-    class3_passengers = df[df['Pclass'] == 3].count()
+    #Exercise 2: Let's calculate survivors by passenger class
+    global class1_passengers
+    global class2_passengers
+    global class3_passengers
+    global class1_survivors
+    global class2_survivors
+    global class3_survivors
 
-    class1_survivors = df[df['Pclass'] == 1 and df['Survived'] == 1].count()
-    class2_survivors = df[df['Pclass'] == 2 and df['Survived'] == 1].count()
-    class3_survivors = df[df['Pclass'] == 3 and df['Survived'] == 1].count()
+    total_passengers = df['PassengerId'].count()
+    class1_passengers = df[df['Pclass'] == 1]['PassengerId'].count()
+    class2_passengers = df[df['Pclass'] == 2]['PassengerId'].count()
+    class3_passengers = df[df['Pclass'] == 3]['PassengerId'].count()
+
+    class1_survivors = df[(df['Pclass'] == 1) & (df['Survived'] == 1)]['PassengerId'].count()
+    class2_survivors = df[(df['Pclass'] == 2) & (df['Survived'] == 1)]['PassengerId'].count()
+    class3_survivors = df[(df['Pclass'] == 3) & (df['Survived'] == 1)]['PassengerId'].count()
+
+    #Exercise 2: Let's calculate survivors by age greater than 18
+    global adult_passengers
+    global kid_passengers
+    global adult_survivors
+    global kid_survivors
+
+    total_passengers = df['PassengerId'].count()
+    adult_passengers = df[df['Age'] > 18]['PassengerId'].count()
+    kid_passengers = df[df['Age'] <= 18]['PassengerId'].count()
+
+    adult_survivors = df[(df['Age'] > 18) & (df['Survived'] == 1)]['PassengerId'].count()
+    kid_survivors = df[(df['Age'] <= 18) & (df['Survived'] == 1)]['PassengerId'].count()
 
     for passenger_index, passenger in df.iterrows():
         passenger_id = passenger['PassengerId']
@@ -48,6 +69,9 @@ def plot_exercise1():
 def plot_exercise2():
     plt.bar(['class 1', 'class 2', 'class 3'], [class1_survivors/class1_passengers, class2_survivors/class2_passengers, class3_survivors/class3_passengers])
     plt.title('Percent of survivors by class')
+    plt.show()
+    plt.bar(['adults', 'kids'], [adult_survivors/adult_passengers, kid_survivors/kid_passengers])
+    plt.title('Percent of survivors by age')
     plt.show()
 
 if __name__ == '__main__':
