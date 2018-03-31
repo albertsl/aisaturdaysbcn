@@ -7,7 +7,7 @@ sns.set_style('whitegrid')
 
 def main():
 	##########
-	# General Data Science
+	# # General Data Science
 	##########
 
 	# # First step: Visualizing the data
@@ -22,25 +22,25 @@ def main():
 	# sns.distplot(df['column'])
 	# sns.heatmap(df.corr())
 	# # Third step: Preparing the data
-	# X = df[['column1','column2','column3','etc']] # The list of columns equals df.columns minus the column we want to predict and non numeric columns.
+	# x = df[['column1','column2','column3','etc']] # The list of columns equals df.columns minus the column we want to predict and non numeric columns.
 	# y = df['column to predict']
-	# Fourth step: Split data into a train / test dataset
-	# from sklearn.cross_validation import train_test_split
-	# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.4, random_state = 101)
+	# # Fourth step: Split data into a train / test dataset
+	# from sklearn.model_selection import train_test_split
+	# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.4, random_state = 101)
 
 	##########
-	# Linear Regression
+	# # Linear Regression
 	##########
 
 	# # Fifth step: Train linear regression model
 	# from sklearn.linear_model import LinearRegression
 	# lm = LinearRegression()
-	# lm.fit(X_train,y_train)
+	# lm.fit(x_train,y_train)
 	# # Sixth step: Linear model interpretation
 	# lm.intercept_
 	# lm.coef_
-	# Seven: Use the model to predict
-	# predictions = lm.predict(X_test)
+	# # Seven: Use the model to predict
+	# predictions = lm.predict(x_test)
 	# # Eight: Evaluate the accuracy of the model
 	# plt.scatter(y_test,predictions) #should have the shape of a line for a good predictions
 	# sns.distplot(y_test-predictions) #should be a normal distribution centered in 0
@@ -50,22 +50,22 @@ def main():
 	# np.sqrt(metrics.mean_squared_error(y_test, predictions))
 
 	##########
-	# Logistic Regression
+	# # Logistic Regression
 	##########
 
 	# # Fifth step: Train logistic regression model
 	# from sklearn.linear_model import LogisticRegression
 	# logmodel = LogisticRegression()
-	# logmodel.fit(X_train,y_train)
+	# logmodel.fit(x_train,y_train)
 	# # Sixth step: Evaluate the model
-	# predictions = logmodel.predict(X_test)
+	# predictions = logmodel.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
 	# confusion_matrix(y_test,predictions)
 
 	##########
-	# KNN
+	# # KNN
 	##########
 
 	# # Third step: Standarizing data
@@ -77,68 +77,68 @@ def main():
 	# # Fifth step: Train KNN model
 	# from sklearn.neighbors import KNeighborsClassifier
 	# knn = KNeighborsClassifier(n_neighbors = 1)
-	# knn.fit(X_train, y_train)
+	# knn.fit(x_train, y_train)
 	# # Sixth step: Evaluate the model
-	# pred = knn.predict(X_test)
+	# pred = knn.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
 	# confusion_matrix(y_test,predictions)
 
 	##########
-	# Decision Tree
+	# # Decision Tree
 	##########
 
 	# # Fifth step: Train Decision Tree model
 	# from sklearn.tree import DecisionTreeClassifier
 	# dtree = DecisionTreeClassifier()
-	# dtree.fit(X_train, y_train)
+	# dtree.fit(x_train, y_train)
 	# # Sixth step: Evaluate the model
-	# pred = knn.predict(X_test)
+	# pred = knn.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
 	# confusion_matrix(y_test,predictions)
 
 	##########
-	# Random Forests
+	# # Random Forests
 	##########
 
 	# # Fifth step: Train Random Forests model
 	# from sklearn.ensemble import RandomForestClassifier
 	# rfc = RandomForestClassifier(n_estimators=200)
-	# rfc.fit(X_train, y_train)
+	# rfc.fit(x_train, y_train)
 	# # Sixth step: Evaluate the model
-	# pred = rfc.predict(X_test)
+	# pred = rfc.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
 	# confusion_matrix(y_test,predictions)
 
 	##########
-	# Support Vector Machine (SVM)
+	# # Support Vector Machine (SVM)
 	##########
 
 	# # Fifth step: Train SVM model
 	# from sklearn.svm import SVC
 	# model = SVC()
-	# model.fit(X_train, y_train)
+	# model.fit(x_train, y_train)
 	# # If it's not working well, refine parameters
 	# from sklearn.grid_search import GridSearchCV
 	# param_grid = {'C':[0.1,1,10,100,1000], 'gamma':[1,0.1,0.01,0.001,0.0001]}
 	# grid = GridSearchCV(SVC(), param_grid, verbose = 3)
 	# grid.best_params_
 	# grid.best_estimator_
-	# model.fit(X_train, y_train) #Add new found parameters
+	# model.fit(x_train, y_train) #Add new found parameters
 	# # Sixth step: Evaluate the model
-	# pred = rfc.predict(X_test)
+	# pred = rfc.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
 	# confusion_matrix(y_test,predictions)
 
 	##########
-	# K-Means Clustering
+	# # K-Means Clustering
 	##########
 
 	# # First step: Train model
