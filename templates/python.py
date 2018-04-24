@@ -48,6 +48,10 @@ def main():
 	# metrics.mean_absolute_error(y_test, predictions)
 	# metrics.mean_squared_error(y_test, predictions)
 	# np.sqrt(metrics.mean_squared_error(y_test, predictions))
+	# from sklearn.metrics import classification_report
+	# print(classification_report(y_test,predictions))
+	# from sklearn.metrics import confusion_matrix
+	# print(confusion_matrix(y_test,predictions))
 
 	##########
 	# # Logistic Regression
@@ -62,7 +66,7 @@ def main():
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
-	# confusion_matrix(y_test,predictions)
+	# print(confusion_matrix(y_test,predictions))
 
 	##########
 	# # KNN
@@ -79,11 +83,11 @@ def main():
 	# knn = KNeighborsClassifier(n_neighbors = 1)
 	# knn.fit(x_train, y_train)
 	# # Sixth step: Evaluate the model
-	# pred = knn.predict(x_test)
+	# predictions = knn.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
-	# confusion_matrix(y_test,predictions)
+	# print(confusion_matrix(y_test,predictions))
 
 	##########
 	# # Decision Tree
@@ -94,11 +98,11 @@ def main():
 	# dtree = DecisionTreeClassifier()
 	# dtree.fit(x_train, y_train)
 	# # Sixth step: Evaluate the model
-	# pred = knn.predict(x_test)
+	# predictions = dtree.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
-	# confusion_matrix(y_test,predictions)
+	# print(confusion_matrix(y_test,predictions))
 
 	##########
 	# # Random Forests
@@ -109,11 +113,11 @@ def main():
 	# rfc = RandomForestClassifier(n_estimators=200)
 	# rfc.fit(x_train, y_train)
 	# # Sixth step: Evaluate the model
-	# pred = rfc.predict(x_test)
+	# predictions = rfc.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
-	# confusion_matrix(y_test,predictions)
+	# print(confusion_matrix(y_test,predictions))
 
 	##########
 	# # Support Vector Machine (SVM)
@@ -131,11 +135,11 @@ def main():
 	# grid.best_estimator_
 	# model.fit(x_train, y_train) #Add new found parameters
 	# # Sixth step: Evaluate the model
-	# pred = rfc.predict(x_test)
+	# predictions = rfc.predict(x_test)
 	# from sklearn.metrics import classification_report
 	# print(classification_report(y_test,predictions))
 	# from sklearn.metrics import confusion_matrix
-	# confusion_matrix(y_test,predictions)
+	# print(confusion_matrix(y_test,predictions))
 
 	##########
 	# # K-Means Clustering
